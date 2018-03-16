@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Ovo</string>
+
+    <!-- NOMBRE DE LA BARRA DE TITIULOS -->
+    <string name="title_menu">Menú de Carreras</string>
+    <string name="title_general">Orientación Vocal Ocupacional</string>
+
+    <!-- NOMBRE DE LOS TABS DE LA PANTALLA PPAL -->
+    <string name="tab_carreras">Carreras</string>
+    <string name="tab_noticias">Noticias</string>
+    <string name="tab_becas">Becas</string>
+
+
+
+    <!-- CARRERAS- -->
+    <string name="arqui">Arquitectura, Urbanismo y Diseño</string>
+    <string name="title_activity_menu_tab">MenuTabActivity</string>
+
+</resources>
