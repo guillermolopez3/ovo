@@ -11,9 +11,15 @@
     <string name="tab_becas">Becas</string>
 
 
-
     <!-- CARRERAS- -->
     <string name="arqui">Arquitectura, Urbanismo y Diseño</string>
     <string name="title_activity_menu_tab">MenuTabActivity</string>
+    <string name="title_activity_detalle_carrera">DetalleCarreraActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

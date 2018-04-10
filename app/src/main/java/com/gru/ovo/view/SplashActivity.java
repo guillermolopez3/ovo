@@ -1,10 +1,10 @@
-package com.gru.ovo;
+package com.gru.ovo.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.gru.ovo.view.MenuTabActivity;
+import com.gru.ovo.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

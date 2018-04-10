@@ -28,7 +28,7 @@ public class FragmentCarreras extends Fragment
         View view = inflater.inflate(R.layout.activity_menu_carreras,container,false);
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler);
-        recyclerView.setAdapter(new AdapterMenu(getActivity(),lista()));
+        recyclerView.setAdapter(new AdapterMenu(getActivity(),nombres()));
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2, LinearLayoutManager.VERTICAL,false));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         return view;
@@ -48,6 +48,24 @@ public class FragmentCarreras extends Fragment
         array.add(R.drawable.medicina);
         array.add(R.drawable.quimica);
         array.add(R.drawable.sociales);
+
+        return array;
+    }
+
+    private ArrayList<String> nombres()
+    {
+        ArrayList<String> array = new ArrayList<>();
+        array.add("Arquitectura, Urbanismo y Diseño");
+        array.add("Artes");
+        array.add("Ciencias Agropecuarias");
+        array.add("Ciencias Económicas");
+        array.add("Cursos de Capacitacón");
+        array.add("Cursos Cortos");
+        array.add("Ciencias de la Comunicación");
+        array.add("Ciencias Exactas, Físicas y Naturales");
+        array.add("Ciencias Médicas");
+        array.add("Ciencias Químicas");
+        array.add("Ciencias Sociales");
 
         return array;
     }
