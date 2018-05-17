@@ -11,27 +11,9 @@ card_view:cardUseCompatPadding="true">
     <FrameLayout
         android:id="@+id/bordeColor"
         android:background="#FF0000"
-        android:layout_width="2dp"
+        android:layout_width="5dp"
         android:layout_height="match_parent"/>
 
-    <FrameLayout
-        android:id="@+id/bordeColorArriba"
-        android:background="#FF0000"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
-    <FrameLayout
-        android:id="@+id/bordeColorAbajo"
-        android:background="#FF0000"
-        android:layout_gravity="bottom"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
-
-    <FrameLayout
-        android:id="@+id/bordeColorDerecha"
-        android:background="#FF0000"
-        android:layout_width="2dp"
-        android:layout_gravity="right"
-        android:layout_height="match_parent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +27,7 @@ card_view:cardUseCompatPadding="true">
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:textColor="@color/color_letra_menu"
+            android:textColor="@android:color/white"
             android:text="Prueba"/>
     </LinearLayout>
 

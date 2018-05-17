@@ -38,7 +38,7 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuHolder>
         //array=arrayList;
         this.nombres=arrayList;
         //array_colores = activity.getResources().getIntArray(R.array.borde_color); //traigo el array de colores de colors
-        array_colores = activity.getResources().getIntArray(R.array.borde_color); //traigo el array de colores de colors
+        array_colores = activity.getResources().getIntArray(R.array.nuevo_borde); //traigo el array de colores de colors
         array_fondo = activity.getResources().getIntArray(R.array.color_fondo); //traigo el array de colores de colors
     }
     @Override
@@ -56,16 +56,10 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuHolder>
         //Picasso.with(activity).load(i).into(holder.imagen);
         holder.texto.setText(i);
 
-        int color = colorBorde();
-        //int fondo = colorFondo();
 
-        holder.bordeColor.setBackgroundColor(color);
-        Log.e("color: ", "" + color);
-        holder.bordeArriba.setBackgroundColor(color);
-        holder.bordeAbajo.setBackgroundColor(color);
-        holder.bordeDerecho.setBackgroundColor(color);
 
-       // holder.cardView.setBackgroundColor(fondo);
+        holder.bordeColor.setBackgroundColor(colorBorde());
+        holder.cardView.setBackgroundColor(colorFondo());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,16 +138,14 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuHolder>
         ImageView   imagen;
         TextView    texto;
         CardView    cardView;
-        FrameLayout bordeColor,bordeArriba,bordeAbajo,bordeDerecho;
+        FrameLayout bordeColor;
         public MenuHolder(View itemView) {
             super(itemView);
             //imagen   =  itemView.findViewById(R.id.itemMenuSrc);
             texto       = itemView.findViewById(R.id.txtCarrera);
             cardView    = itemView.findViewById(R.id.cardMenu);
             bordeColor  = itemView.findViewById(R.id.bordeColor);
-            bordeArriba  = itemView.findViewById(R.id.bordeColorArriba);
-            bordeAbajo  = itemView.findViewById(R.id.bordeColorAbajo);
-            bordeDerecho= itemView.findViewById(R.id.bordeColorDerecha);
+
 
         }
     }
