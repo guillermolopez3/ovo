@@ -18,4 +18,6 @@ public class MetodosComunes
         activity.getSupportActionBar().setTitle(tittle);
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
+
+
 }

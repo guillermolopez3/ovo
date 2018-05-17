@@ -21,7 +21,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gru.ovo.R;
+import com.gru.ovo.view.fragments.FragmentBecas;
 import com.gru.ovo.view.fragments.FragmentCarreras;
+import com.gru.ovo.view.fragments.FragmentNoticias;
 
 public class MenuTabActivity extends AppCompatActivity {
 
@@ -83,6 +85,12 @@ public class MenuTabActivity extends AppCompatActivity {
                 case 0:
                     FragmentCarreras carreras= new FragmentCarreras();
                     return carreras;
+                case 1:
+                    FragmentNoticias noticias = FragmentNoticias.newInstance();
+                    return noticias;
+                case 2:
+                    FragmentBecas becas = FragmentBecas.newInstance();
+                    return becas;
                 default:
                     return null;
             }
@@ -90,7 +98,7 @@ public class MenuTabActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 1;
+            return 3;
         }
     }
 }

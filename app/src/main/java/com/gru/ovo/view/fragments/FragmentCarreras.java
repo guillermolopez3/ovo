@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.gru.ovo.R;
 import com.gru.ovo.adapter.AdapterMenu;
+import com.gru.ovo.model.MenuModel;
 
 import java.util.ArrayList;
 
@@ -69,4 +70,6 @@ public class FragmentCarreras extends Fragment
 
         return array;
     }
+
+
 }

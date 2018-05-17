@@ -3,6 +3,9 @@ package com.gru.ovo.view;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,7 +13,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.gru.ovo.R;
+import com.gru.ovo.adapter.AdapterCarreras;
 import com.gru.ovo.helpers.MetodosComunes;
+import com.gru.ovo.model.CarreraModel;
 
 import java.util.ArrayList;
 
@@ -26,8 +31,12 @@ public class CarrerasActivity extends AppCompatActivity
         categoria= getIntent().getStringExtra("categoria");
         MetodosComunes.showToolbar(getIntent().getStringExtra("title"),false,this);
 
-        ListView listView = findViewById(R.id.listCarreras);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,arqui());
+        RecyclerView recyclerView = findViewById(R.id.recyclerCarrra);
+        recyclerView.setAdapter(new AdapterCarreras(arqui(),this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+
+
+       /* final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,arqui());
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -39,15 +48,15 @@ public class CarrerasActivity extends AppCompatActivity
                 startActivity(i);
 
             }
-        });
+        });*/
     }
 
-    private ArrayList<String> arqui()
+    private ArrayList<CarreraModel> arqui()
     {
-        ArrayList<String> list=new ArrayList<>();
+        ArrayList<CarreraModel> list=new ArrayList<>();
 
-        list.add("Arquitectura");
-        list.add("Diseño Industrial");
+        list.add(new CarreraModel( "Arquitectura"));
+        list.add(new CarreraModel( "Diseño Industrial"));
         return list;
     }
 }

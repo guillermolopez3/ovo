@@ -18,15 +18,17 @@
 
         />
 
-    <ImageView
+    <TextView
         android:id="@+id/splashTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/splashImg"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:src="@drawable/titulo"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:padding="10dp"
+        android:textSize="24sp"
+        android:text="Programa de Orientación Vocacional-Ocupacional"
+         />
 
     <ImageView
         android:layout_width="300dp"

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,14 +28,18 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuHolder>
     ArrayList<Integer> array;
     ArrayList<String> nombres;
     int posicion_color=0; //valores para que al llegar al final del array de colores vuelva a iniciar el array y pintar nuevamente con los colores
+    int posicion_color_fondo=0;
     private int array_colores[];
+    private int array_fondo[];
 
     public AdapterMenu(Activity activity, ArrayList<String> arrayList)
     {
         this.activity=activity;
         //array=arrayList;
         this.nombres=arrayList;
+        //array_colores = activity.getResources().getIntArray(R.array.borde_color); //traigo el array de colores de colors
         array_colores = activity.getResources().getIntArray(R.array.borde_color); //traigo el array de colores de colors
+        array_fondo = activity.getResources().getIntArray(R.array.color_fondo); //traigo el array de colores de colors
     }
     @Override
     public MenuHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -51,7 +56,16 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuHolder>
         //Picasso.with(activity).load(i).into(holder.imagen);
         holder.texto.setText(i);
 
-        holder.bordeColor.setBackgroundColor(colorBorde());
+        int color = colorBorde();
+        //int fondo = colorFondo();
+
+        holder.bordeColor.setBackgroundColor(color);
+        Log.e("color: ", "" + color);
+        holder.bordeArriba.setBackgroundColor(color);
+        holder.bordeAbajo.setBackgroundColor(color);
+        holder.bordeDerecho.setBackgroundColor(color);
+
+       // holder.cardView.setBackgroundColor(fondo);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,18 +122,39 @@ public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.MenuHolder>
         return m_color;
     }
 
+    private int colorFondo()
+    {
+        int m_color;
+        int leng_array_color= array_fondo.length;
+
+        if(posicion_color_fondo<=leng_array_color -1)
+        {
+            m_color= array_fondo[posicion_color_fondo];
+            posicion_color_fondo++;
+        }
+        else {
+            posicion_color_fondo=0;
+            m_color= array_fondo[posicion_color_fondo];
+        }
+        return m_color;
+    }
+
     class MenuHolder extends RecyclerView.ViewHolder
     {
         ImageView   imagen;
         TextView    texto;
         CardView    cardView;
-        FrameLayout bordeColor;
+        FrameLayout bordeColor,bordeArriba,bordeAbajo,bordeDerecho;
         public MenuHolder(View itemView) {
             super(itemView);
             //imagen   =  itemView.findViewById(R.id.itemMenuSrc);
             texto       = itemView.findViewById(R.id.txtCarrera);
             cardView    = itemView.findViewById(R.id.cardMenu);
             bordeColor  = itemView.findViewById(R.id.bordeColor);
+            bordeArriba  = itemView.findViewById(R.id.bordeColorArriba);
+            bordeAbajo  = itemView.findViewById(R.id.bordeColorAbajo);
+            bordeDerecho= itemView.findViewById(R.id.bordeColorDerecha);
+
         }
     }
 }

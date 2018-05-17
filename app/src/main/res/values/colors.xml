@@ -21,4 +21,37 @@
         <item>@color/m_deep_purple</item>
     </array>
 
+    <color name="gris">#BEBEBE</color>
+
+    <color name="marino">#337c73</color>
+    <color name="marino_dark">#0a6079</color>
+    <color name="naranja">#bc7428</color>
+    <color name="naranja_dark">#d45311</color>
+    <color name="pastel">#ce513b</color>
+    <color name="pastel_dark">#ea2628</color>
+    <color name="opaco">#536855</color>
+    <color name="opaco_dark">#3f494a</color>
+    <color name="verde">#3a8b46</color>
+    <color name="verde_dark">#0b773d</color>
+    <color name="violeta">#8b5591</color>
+    <color name="violeta_dark">#9045aa</color>
+
+    <array name="nuevo_borde">
+        <item>@color/marino_dark</item>
+        <item>@color/naranja_dark</item>
+        <item>@color/pastel_dark</item>
+        <item>@color/opaco_dark</item>
+        <item>@color/verde_dark</item>
+        <item>@color/violeta_dark</item>
+    </array>
+
+    <array name="color_fondo">
+        <item>@color/marino</item>
+        <item>@color/naranja</item>
+        <item>@color/pastel</item>
+        <item>@color/opaco</item>
+        <item>@color/verde</item>
+        <item>@color/violeta</item>
+    </array>
+
 </resources>
